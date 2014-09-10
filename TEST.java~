@@ -1,0 +1,17 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class TEST {
+    public static void main(String[] args) {
+        DrawingBoard b = new DrawingBoard();
+        
+        JFrame win = new JFrame("shapes");
+        win.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        ShapeControl disp = new ShapeControl(b);
+        win.getContentPane().add(disp);
+        win.pack();
+        win.setVisible(true);
+        
+        //PrintView smash = new PrintView(b);
+    }
+}

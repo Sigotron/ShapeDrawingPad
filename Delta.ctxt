@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=apexX\ apexY\ h\ c
+comment0.target=Delta(int,\ int,\ int,\ java.awt.Color)
+comment0.text=\r\n\ Constructs\ Delta\ object\r\n\ @param\ apexX\ represents\ x\ coordinate\ of\ apex\ of\ Delta\r\n\ @param\ apexY\ represents\ y\ coordinate\ of\ apex\ of\ Delta\r\n\ @param\ h\ represents\ height\ of\ Delta\r\n\ @param\ c\ represents\ color\ of\ Delta\r\n
+comment1.params=x\ y
+comment1.target=boolean\ isOn(int,\ int)
+comment1.text=\r\n\ returns\ true\ if\ the\ point\ (x,y)\ is\ on\ the\ Shape,\ false\ if\ not\r\n\ @param\ x\ represents\ x\ coordinate\ to\ be\ tested\ against\ shape\r\n\ @param\ y\ represents\ y\ coordinate\ to\ be\ tested\ against\ shape\r\n\ @return\ true\ if\ point\ is\ on\ shape,\ false\ if\ not\r\n
+comment2.params=
+comment2.target=int\ getHeight()
+comment2.text=\r\n\ returns\ height\ of\ shape\r\n\ @return\ height\ of\ shape\r\n
+comment3.params=g
+comment3.target=void\ drawMe(java.awt.Graphics)
+comment3.text=\r\n\ draws\ shape\ on\ a\ graphics\ editor\r\n
+comment4.params=
+comment4.target=java.lang.String\ toString()
+comment4.text=\r\n\ provide\ a\ String\ representation\ of\ the\ shape's\ state\r\n\ @return\ String\ representation\ of\ the\ shape's\ state\r\n
+numComments=5

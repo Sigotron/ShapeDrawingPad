@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ DBchanged()
+comment0.text=\r\n\ allows\ views\ to\ be\ notified\ of\ updates\ to\ model\r\n
+numComments=1

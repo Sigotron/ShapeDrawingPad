@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=db
+comment0.target=PrintView(DrawingBoard)
+comment0.text=\r\n\ Constructs\ a\ PrintView\ object\r\n\ @param\ db\ represents\ DrawingBoard\ that\ will\ be\ queried\r\n
+comment1.params=
+comment1.target=void\ DBchanged()
+comment1.text=\r\n\ Displays\ info\ to\ console\ about\ data\ in\ DrawingBoard\r\n
+numComments=2

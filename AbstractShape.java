@@ -1,0 +1,124 @@
+import java.awt.*;
+/**
+ * Abstract class AbstractShape implements methods used by all subclasses,
+ * allows data common to all shapes to be stored via the instance variables,
+ * as well as passes abstract methods to subclasses.
+ * 
+ * @author Joel Sigo
+ * @version 01/12/2013
+ */
+public abstract class AbstractShape implements Shape {
+    
+    // instance variables
+    protected Color shapeColor;
+    protected boolean selected;
+    protected int baseX, baseY;
+    
+    /**
+     * constructor for AbstractShape to be inherited by subclasses
+     * @param x represents x coordinate of base for shape
+     * @param y represents y coordinate of base for shape
+     * @param c represents Color for shape
+     */
+    public AbstractShape(int x, int y, Color c) {
+        baseX = x;
+        baseY = y;
+        shapeColor = c;
+    }
+
+    /**
+     * sets this Shape to selected Color
+     * @param x represents Color to set shape to
+     */
+    public void setColor(Color x) {
+        shapeColor = x;
+    }
+    
+    /**
+     * returns Color used by this Shape
+     * @return Color used by this Shape
+     */
+    public Color getColor() {
+        return shapeColor;
+    }
+    
+    /**
+     * returns baseX of this shape
+     * @return baseX of this shape
+     */
+    public int getbaseX() {
+        return baseX;
+    }
+    
+    /**
+     * returns baseY of this shape
+     * @return baseY of this shape
+     */
+    public int getbaseY() {
+        return baseY;
+    }
+    
+    /**
+     * draws shape on a graphics editor
+     */
+    public abstract void drawMe(Graphics g);
+    
+    /**
+     * sets this Shape to be selected
+     * @param b if true selects shape
+     */
+    public void setSelected(boolean b) {
+        selected = b;
+    }
+    
+    /**
+     * returns true if this Shape is selected, false if not
+     * @return true if this Shape is selected, false if not
+     */
+    public boolean isSelected() {
+        return selected;
+    }
+    
+     /**
+     * move this Shape to the new location
+     * @param newX represents baseX coordinate of the new location of the Shape
+     * @param newY represents baseY coordinate of the new location of the Shape
+     */
+    public void moveTo(int newX, int newY){
+        baseX = newX;
+        baseY = newY;
+    }
+    
+    /**
+     * move this Shape deltaX units along the x-axis and deltaY units 
+     * along the y-axis
+     * @param deltaX represents int number to shift x coordinate of
+     * shape
+     * @param deltaY represents int number to shift y coordinate of
+     * shape
+     */
+    public void shiftBy(int deltaX, int deltaY){
+        baseX += deltaX;
+        baseY += deltaY;
+    }
+    
+     /**
+     * returns true if the point (x,y) is on the Shape, false if not
+     * @param x represents x coordinate to be tested against shape
+     * @param y represents y coordinate to be tested against shape
+     * @return true if point is on shape, false if not
+     */
+    public abstract boolean isOn(int x, int y);
+    
+     /**
+     * provide a String representation of the shape's state
+     * @return String representation of the shape's state
+     */
+    public abstract String toString();
+    
+    /**
+     * returns height of shape
+     * @return height of shape
+     */
+    public abstract int getHeight();
+}

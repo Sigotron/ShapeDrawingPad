@@ -1,0 +1,24 @@
+import java.util.List; 
+import java.util.ArrayList; 
+import java.util.ListIterator;
+
+public class loki {
+ public static void main(String[] args){
+  List<String> slist = new ArrayList<String>(); 
+  slist.add("1");
+  slist.add("2");
+  slist.add("3");
+  slist.add("4");
+  ListIterator i = slist.listIterator(); 
+  int count = 0;
+  while(i.hasNext()){  
+
+   System.out.print(i.next());
+  }
+  //System.out.println();
+  //while(i.hasPrevious()){  
+  // System.out.print(i.previous()); 
+  //}
+}
+}
+ 

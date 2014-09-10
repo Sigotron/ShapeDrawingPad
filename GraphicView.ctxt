@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=db
+comment0.target=GraphicView(DrawingBoard)
+comment0.text=\r\n\ Constructs\ GraphicView\ object.\r\n\ @param\ db\ represents\ DrawingBoard\ object\ to\ be\ queried\r\n
+comment1.params=
+comment1.target=void\ DBchanged()
+comment1.text=\r\n\ repaints\ Graphics\r\n
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment2.text=\r\n\ Overrides\ paintComponent\ and\ draws\ all\ shapes\ in\ \r\n\ DrawingBoard\ Model\r\n\ @param\ g\ represents\ graphic\ object\ that\ will\ be\ painted\ on\r\n
+numComments=3

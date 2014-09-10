@@ -1,0 +1,87 @@
+import java.awt.Color;
+/**
+ * Interface defines the qualifying features of a Shape.
+ * 
+ * @author Joel Sigo 
+ * @version 01/11/2013
+ */
+public interface Shape {
+    
+     /**
+     * returns true if the point (x,y) is on the Shape, false if not
+     * @param x represents x coordinate to be tested against shape
+     * @param y represents y coordinate to be tested against shape
+     * @return true if point is on shape, false if not
+     */
+    public abstract boolean isOn(int x, int y);
+    
+    /**
+     * returns true if this Shape is selected, false if not
+     * @return true if this Shape is selected, false if not
+     */
+    public boolean isSelected();
+    
+    /**
+     * sets this Shape to be selected
+     * @param b if true selects shape
+     */
+    public void setSelected(boolean b);
+    
+    /**
+     * sets this Shape to selected Color
+     * @param x represents Color to set shape to
+     */
+    public void setColor(Color x);
+    
+    /**
+     * returns baseX of this shape
+     * @return baseX of this shape
+     */
+    public int getbaseX();
+    
+    /**
+     * returns baseY of this shape
+     * @return baseY of this shape
+     */
+    public int getbaseY();
+    
+    /**
+     * returns Color used by this Shape
+     * @return Color used by this Shape
+     */
+    public Color getColor();
+    
+    /**
+     * draws shape on a graphics editor
+     */
+    public abstract void drawMe(Graphics g);
+    
+    /**
+     * returns height of shape
+     * @return height of shape
+     */
+    public abstract int getHeight();
+    
+    /**
+     * move this Shape deltaX units along the x-axis and deltaY units 
+     * along the y-axis
+     * @param deltaX represents int number to shift x coordinate of
+     * shape
+     * @param deltaY represents int number to shift y coordinate of
+     * shape
+     */
+    public void shiftBy(int deltaX, int deltaY);
+    
+    /**
+     * move this Shape to the new location
+     * @param newX represents x coordinate to move shape to
+     * @param newY represents y coordinate to move shape to
+     */
+    public abstract void moveTo(int newX, int newY);
+    
+    /**
+     * provide a String representation of the shape's state
+     * @return String representation of the shape's state
+     */
+    public abstract String toString();
+}

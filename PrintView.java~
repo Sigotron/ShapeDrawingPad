@@ -1,0 +1,39 @@
+import java.util.*;
+/**
+ *  Displays the current number of shapes in the DrawingBoard
+ *  and the details of the selected shape
+ * 
+ * @author Joel Sigo 
+ * @version 1/21/2013
+ */
+public class PrintView implements DBListener {
+    
+    // instance variables
+    private DrawingBoard board;
+
+    /**
+     * Constructs a PrintView object
+     */
+    public PrintView(DrawingBoard db) {
+        board = db;
+        System.out.println(this);
+        board.addListener(this);
+    }
+    
+    /**
+     * Displays info to console about data in DrawingBoard
+     */
+    public void DBchanged() {
+        Shape selected = board.getReference();
+        ArrayList copy = board.getCopy();
+        int numShapes = copy.size();
+        System.out.println("Current number of shapes: " +
+            numShapes);
+        if (selected == null) {
+            System.out.println("No shape currently selected");
+        } else {
+            System.out.println("Shape currently selected: " +
+            selected.toString());
+        }
+    }
+}

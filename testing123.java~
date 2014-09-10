@@ -1,0 +1,46 @@
+import java.awt.*;
+import java.util.*;
+/**
+ * Write a description of class testing123 here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class testing123 {
+    public static void main(String[] args) {
+        Circle c = new Circle(10,10,5,Color.RED);
+        System.out.println(c.toString());
+        Delta d = new Delta(30,30,10,Color.GREEN);
+        System.out.println(d.toString());
+        Tee t = new Tee(30,30,20,Color.BLUE);
+        System.out.println(t.toString());
+        DrawingBoard board = new DrawingBoard();
+        board.addShape(c);
+        //System.out.println(board.getReference().toString());
+        board.addShape(d);
+        //System.out.println(board.getReference().toString());
+        board.addShape(t);
+        System.out.println(board.getReference().toString());
+        board.selectXY(1000,1000);
+        System.out.println(board.getReference());
+        Circle c2 = new Circle(15,15,30,Color.RED);
+        board.addShape(c2);
+        System.out.println(board.getReference().toString());
+        board.changeColor(Color.BLACK);
+        System.out.println(board.getReference().toString());
+        board.deleteSelected();
+        System.out.println(board.getReference().toString());
+        System.out.println(board.getReference().toString());
+        Circle c3 = new Circle(15,15,30,Color.RED);
+        board.addShape(c3);
+        board.moveShape(500,500);
+        board.SelectXY(30,30);
+        ArrayList<Shape> pacman = board.getCopy();
+        Iterator<Shape> it = pacman.iterator();
+        System.out.println("******************************************************************************");
+        while (it.hasNext()) {
+            Shape s = it.next();
+            System.out.println(s.toString());
+        }
+    }
+}

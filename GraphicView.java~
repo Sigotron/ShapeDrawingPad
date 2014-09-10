@@ -1,0 +1,75 @@
+import java.awt.*;
+import javax.swing.*;
+import java.util.*;
+/**
+ * Creates graphic view of shapes in DrawingBoard.
+ * 
+ * @author Joel Sigo 
+ * @version 1/22/2012
+ */
+public class GraphicView extends JPanel implements DBListener{
+
+    //instance variables
+    private DrawingBoard board;
+    
+    //class variable
+    private static Color selectedColor = new Color(0,0,0,150);
+    
+    /**
+     * Constructs GraphicView object.
+     * @param db represents DrawingBoard object to be queried
+     */
+    public GraphicView(DrawingBoard db) {
+        super();
+        board = db;
+        board.addListener(this);
+    }
+    
+    /**
+     * repaints Graphics
+     */
+    public void DBchanged() {
+        this.repaint();
+    }
+    
+    /**
+     * Overrides paintComponent and draws all shapes in 
+     * DrawingBoard Model
+     */
+    public void paintComponent (Graphics g ) {
+        super.paintComponent(g);
+        ArrayList copy = board.getCopy();
+        Iterator<Shape> it = copy.iterator();
+        while (it.hasNext()) { // display all shapes in drawingboard
+            Shape s = it.next();
+            s.drawMe(g);
+        }
+        // Creates an identical transparent shape to overlay selected
+        // shape and make it darker
+        if (board.getReference() != null) {
+            Shape ref = board.getReference();
+            int x = ref.getbaseX();
+            int y = ref.getbaseY();
+            int h = ref.getHeight();
+            if (ref instanceof Circle) {
+                g.setColor(selectedColor);
+                g.fillOval(x,y,h,h);
+            } else if (ref instanceof Delta) {
+                g.setColor(selectedColor);
+                int[] xPoints = {x, x + h / 2, x - h / 2};
+                int[] yPoints = {y, y + h, y + h};
+                g.fillPolygon(xPoints,yPoints,3);
+            } else if (ref instanceof Tee) {
+                g.setColor(selectedColor);
+                int[] xPoints = {x, x + h, x + h, x + (int)((.6) * h),
+                x + (int)((.6) * h), x + (int)((.4) * h), 
+                x + (int)((.4) * h), x};
+                int[] yPoints = {y, y, y + (int)((.2) * h),
+                y + (int)((.2) * h), y + h, y + h, 
+                y + (int)((.2) * h), y + (int)((.2) * h)};
+                g.fillPolygon(xPoints,yPoints,8);
+            }
+        } 
+    }
+}
+

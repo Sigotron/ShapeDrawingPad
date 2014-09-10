@@ -1,0 +1,69 @@
+import java.awt.*;
+/**
+ * Allows Circle objects to be constucted, stores data pertainable to 
+ * Circle objects, and overrides abstract methods inherited from 
+ * AbstractShape.
+ * 
+ * @author Joel Sigo
+ * @version 01/12/2013
+ */
+public class Circle extends AbstractShape {
+
+    // instance variables
+    private int height, width;
+
+    /**
+     * Constructs Circle object
+     * @param midX represents x coordinate of middle of circle
+     * @param midY represents y coordinate of middle of circle
+     * @param radius represents radius of circle
+     * @param c represents color of circle
+     */
+    public Circle(int midX, int midY, int radius, Color c) {
+        super(midX - radius, midY - radius, c);
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive");
+        }
+        height = radius * 2;
+        width = height;
+    }
+    
+     /**
+     * returns true if the point (x,y) is on the Shape, false if not
+     * @param x represents x coordinate to be tested against shape
+     * @param y represents y coordinate to be tested against shape
+     * @return true if point is on shape, false if not
+     */
+    public boolean isOn(int x, int y){
+        double midX = baseX + (double)(width / 2); // use distance formula from
+        double midY = baseY + (double)(height / 2);// center of circle
+        double distance = Math.sqrt(Math.pow(midX - x,2) + Math.pow(midY - y,2));
+        return distance <= (double)(width / 2);
+    }
+    
+    /**
+     * returns height of shape
+     * @return height of shape
+     */
+    public int getHeight() {
+        return height;
+    }
+    
+    /**
+     * draws shape on a graphics editor
+     */
+    public void drawMe(Graphics g) {
+        g.setColor(shapeColor);
+        g.fillOval(baseX,baseY,height,width);
+    }
+    
+    /**
+     * provide a String representation of the shape's state
+     * @return String representation of the shape's state
+     */
+    public String toString() {
+        return "Circle Base = (" + baseX + "," + baseY + "); Width = " + width + 
+            "; Height = " + height + "; Color = " + shapeColor + "; Selected = " + 
+            selected;
+    }
+}

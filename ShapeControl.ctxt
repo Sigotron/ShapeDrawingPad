@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=db
+comment0.target=ShapeControl(DrawingBoard)
+comment0.text=\r\n\ Constructs\ a\ ShapeControl\ object.\ Sets\ up\ buttons\ and\ overall\ layout\ of\r\n\ JFrame.\r\n\ @param\ db\ represents\ DrawingBoard\ obect\ or\ model\ that\ will\ be\ represented\r\n
+comment1.params=x
+comment1.target=void\ setShapeRef(int)
+comment1.text=\r\n\ sets\ ShapeRef\ to\ desired\ int\ value\r\n\ @param\ x\ represents\ desired\ int\ value\ of\ ShapeRef\r\n
+comment2.params=
+comment2.target=int\ getShapeRef()
+comment2.text=\r\n\ returns\ int\ value\ of\ ShapeRef\r\n\ @return\ int\ value\ of\ ShapeRef\r\n
+comment3.params=x
+comment3.target=void\ setColorRef(java.awt.Color)
+comment3.text=\r\n\ sets\ ColorRef\ to\ desired\ Color\r\n\ @param\ x\ represents\ desired\ Color\ of\ ColorRef\r\n
+comment4.params=
+comment4.target=java.awt.Color\ getColorRef()
+comment4.text=\r\n\ returns\ Color\ of\ ColorRef\r\n\ @return\ Color\ of\ ColorRef\r\n
+numComments=5
